@@ -24,4 +24,4 @@ def Dogorcat(Img):
         preprocessing_function=tf.keras.applications.vgg16.preprocess_input
     )
 
-    return probs[0][0], probs[0][1]
+    return probs[0][0], (100 - probs[0][0])
