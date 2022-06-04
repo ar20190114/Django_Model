@@ -15,7 +15,7 @@ class PhotoImageView(viewsets.ModelViewSet):
 
 
     # postメソッドをオーバーライドする
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         form = PhotoImageForm(request.POST)
 
         sample = PhotoImageModel()
