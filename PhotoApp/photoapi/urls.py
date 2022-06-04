@@ -4,8 +4,8 @@ from rest_framework import routers
 from .views import PhotoImageView
 
 router = routers.SimpleRouter()
-router.register(r'User', PhotoImageView)
+router.register('image', PhotoImageView)
 
 urlpatterns = [
-    path('',include(router.urls)),
+    path('', include(router.urls)),
 ]

@@ -6,4 +6,4 @@ from .models import PhotoImageModel
 class PhotoImageForm(forms.ModelForm):
     class Meta:
         model = PhotoImageModel
-        fields = ('img',)
+        fields = ('user_image',)
