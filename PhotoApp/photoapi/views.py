@@ -23,7 +23,7 @@ class PhotoImageView(viewsets.ModelViewSet):
         sample.save()
         sample_img = sample.img
 
-        #人工知能プログラムを使って犬か猫を判定するru
+        #人工知能プログラムを使って犬か猫を判定するruru
         from .photoimage import Dogorcat
         img = request.FILES['img']
         dog, cat = Dogorcat(img)
