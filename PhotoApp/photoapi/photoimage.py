@@ -15,7 +15,7 @@ def Dogorcat(Img):
     x_test_preproc = tf.keras.applications.vgg16.preprocess_input(x_test.copy())/255.
     probs = model.predict(x_test_preproc)
 
-    # 学習画像を取り込むジェネレータを作成。それぞれのパラメータを設定
+    # 学習画像を取り込むジェネレータを作成。それぞれのパラメータを設定..
     img_gen = tf.keras.preprocessing.image.ImageDataGenerator(
         rescale=1/255.,
         shear_range=0.1,
@@ -24,4 +24,4 @@ def Dogorcat(Img):
         preprocessing_function=tf.keras.applications.vgg16.preprocess_input
     )
 
-    return probs[0][0], probs[0][1]
+    return probs[0][0], (100 - probs[0][0])

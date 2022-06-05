@@ -6,6 +6,7 @@ import shutil
 import os
 from rest_framework import viewsets
 from .serializers import PhotoImageSerializers
+from rest_framework.response import Response
 
 
 class PhotoImageView(viewsets.ModelViewSet):
@@ -28,7 +29,8 @@ class PhotoImageView(viewsets.ModelViewSet):
         img = request.FILES['img']
         dog, cat = Dogorcat(img)
 
-        return render(request, self.template_name, {
+        return Response(
+            {
             'dog': self.dog, 'cat': cat,
-        }
+            }
                     )
